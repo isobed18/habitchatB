@@ -1,5 +1,5 @@
 # Habit Tracker - Social Habit Tracking Application
-
+[Habit Tracker Demo Screenshots] (habitchatsunum.pdf)
 A social habit tracking application that allows users to track their habits, share progress with friends, and earn rewards through achievements.
 
 ## Goal Features
