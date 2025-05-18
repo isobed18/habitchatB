@@ -78,11 +78,9 @@ http://127.0.0.1:8000/
 ```
 
 2. React Native Mobile App:
-For the mobile app, please visit:
-```
-https://github.com/isobed18/habitchatF
-```
+For the mobile app, please visit and follow the setup instructions:
 
+[Habit Tracker Frontend Repository](https://github.com/isobed18/habitchatF)
 ## Important Commands and Configurations
 
 ### Server Configuration
