@@ -1,0 +1,15 @@
+Type Command Prompt in the search bar on the Taskbar.
+
+Right click on Command Prompt icon and select Run as administrator.
+
+
+
+time 00:00:00 changes the time
+
+then to resync the time
+Type the following commands one-by-one and hit Enter:
+net stop w32time  //stops the service
+w32tm /unregister  
+w32tm /register
+net start w32time  //starts the service
+w32tm /resync   // resyncs

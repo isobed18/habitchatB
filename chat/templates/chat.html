@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat</title>
+</head>
+<body>
+    <h2>Chat Room</h2>
+    <div id="chat-log"></div>
+    <input id="chat-message-input" type="text"><button id="send">Send</button>
+
+    <script>
+    const roomName = "general";
+    const username = "{{ request.user.username }}";  // Use Django template to pass username
+
+    const chatSocket = new WebSocket("ws://" + window.location.host + "/ws/chat/" + roomName + "/");
+
+    chatSocket.onmessage = function (event) {
+        const data = JSON.parse(event.data);
+        document.querySelector("#chat-log").innerHTML += `<p><b>${data.username}</b>: ${data.message}</p>`;
+    };
+
+    document.querySelector("#send").onclick = function () {
+        const messageInput = document.querySelector("#chat-message-input").value;
+        chatSocket.send(JSON.stringify({ "message": messageInput }));
+        document.querySelector("#chat-message-input").value = "";
+    };
+</script>
+</body>
+</html>

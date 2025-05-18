@@ -1,0 +1,41 @@
+celery -A habit_tracker.my_celery beat --loglevel=debug --max-interval 5
+
+here-> max-interval = refresh rate
+
+----------------------------
+rm celerybeat-schedule.* 
+redis-cli FLUSHALL
+
+cleaning schedule tables
+--------------------------------
+
+celery -A habit_tracker.my_celery worker --loglevel=info --pool=solo
+
+starting celery worker
+--pool=solo is important. windows allows just this method
+
+---------------------------------
+
+celery -A habit_tracker.my_celery beat --loglevel=debug --scheduler django_celery_beat.schedulers:DatabaseScheduler
+
+--scheduler
+
+choosing the scheduler will be used
+
+
+***makesure django and celery beat using the same scheduler
+
+
+add "app.conf.beat_scheduler = 'django_celery_beat.schedulers:DatabaseScheduler'" line to choose beat's scheduler
+
+
+---------------------
+
+celery -A habit_tracker.my_celery call habit_tracker.tasks.add --args='[1, 2]'
+
+call
+
+calling a task
+
+-------------------
+
