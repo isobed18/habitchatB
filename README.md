@@ -2,7 +2,7 @@
 
 A social habit tracking application that allows users to track their habits, share progress with friends, and earn rewards through achievements.
 
-## Features
+## Goal Features
 
 - Habit tracking with time and count-based tracking
 - Social features (friend system, photo sharing for habit verification)
