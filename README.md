@@ -96,7 +96,7 @@ python manage.py runserver 0.0.0.0:8000
 ```
 - Configure ALLOWED_HOSTS in settings.py:
 ```python
-ALLOWED_HOSTS = ["127.0.0.1", "localhost", "192.168.1.33"]  # Add your IP for LAN access
+ALLOWED_HOSTS = ["127.0.0.1", "localhost", "your.local.ip"]  # Add your IP for LAN access. (CMD-> ipconfig-> LAN ADAPTER ipv4)
 ```
 
 ### Celery Commands
